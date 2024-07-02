@@ -1,12 +1,80 @@
+<!-- TODO
+ - make the header layout better xD
+ - add a content section that will describe something
+ - Make user able to select between different contents via a menu on header
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oh hi! :)</title>
-</head>
-<body>
-  <h1>Welcome to me!</h1>
-  <p>This will be a WIP for a while. Just sayin</p>
-</body>
+  <head>
+    <title>Oh hi! :)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body class="background">
+    <header
+      class="header"
+    >
+      <img
+        class="picture"
+        onclick="toggleMenu()"
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.emoji.gg%2Femojis%2F52284-cat-laughing-at-you.png&f=1&nofb=1&ipt=317595a2db75cf848a95b971602697882986cbb5ede1a53c0a0837397952e544&ipo=images"
+      >
+    </header>
+
+    <ul id="menu" hidden>
+      <li onclick="showContent()">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+    </ul>
+
+    <content id="content" hidden>
+      <p>Hello! It's a me Mario!</p>
+    </content>
+  </body>
+
+  <style>
+    .background {
+      background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wallpaperflare.com%2Fstatic%2F810%2F29%2F167%2Fsea-sunset-beach-night-wallpaper.jpg&f=1&nofb=1&ipt=1ecda3a9563f6f99db681a8b2f4bcc34961c1cd4426c24e81eda7ff8aa99458c&ipo=images');
+      background-size: auto;
+      margin: 1rem;
+    }
+
+    .header {
+      height: 300px;
+      width: 100%;
+      border-radius: 1rem;
+      background-color: #5b5b5b;
+    }
+
+    .picture {
+      border-radius: 5rem;
+      scale: 50%;
+    }
+  </style>
+
+  <script>
+    function showContent() {
+      if(document.getElementById("content").hidden) {
+        document.getElementById("content").removeAttribute("hidden");
+      } else {
+        document.getElementById("content").setAttribute("hidden", "");
+      }
+    }
+
+    function toggleMenu() {
+      if(document.getElementById("menu").hidden) {
+        document.getElementById("menu").removeAttribute("hidden");
+      } else {
+        document.getElementById("menu").setAttribute("hidden", "");
+      }
+    }
+  </script>
 </html>
