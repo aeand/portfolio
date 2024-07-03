@@ -1,7 +1,8 @@
 <!-- TODO
- - make the header layout better xD
+ - add icons for each navigation element
  - add a content section that will describe something
  - Make user able to select between different contents via a menu on header
+ - add a back to top button
 -->
 
 <!DOCTYPE html>
@@ -16,27 +17,24 @@
     <header
       class="header"
     >
-      <img
-        class="picture"
-        onclick="toggleMenu()"
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.emoji.gg%2Femojis%2F52284-cat-laughing-at-you.png&f=1&nofb=1&ipt=317595a2db75cf848a95b971602697882986cbb5ede1a53c0a0837397952e544&ipo=images"
-      >
+      <h2 onclick="show('about')" style="text-decoration: underline; color: #067df5">About me</h2>
+      <h2 onclick="show('hobby')" style="text-decoration: underline; color: #067df5">Hobbies</h2>
+      <h2 onclick="show('work')" style="text-decoration: underline; color: #067df5">Work Experience</h2>
     </header>
 
-    <ul id="menu" hidden>
-      <li onclick="showContent()">1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-    </ul>
-
-    <content id="content" hidden>
+    <content id="about" hidden>
+      <h1>About page</h1>
       <p>Hello! It's a me Mario!</p>
+    </content>
+
+    <content id="hobby" hidden>
+      <h1>Hobby page</h1>
+      <p>This is what I do</p>
+    </content>
+
+    <content id="work" hidden>
+      <h1>Work experience page</h1>
+      <p>I worked before.. I swear!</p>
     </content>
   </body>
 
@@ -48,7 +46,11 @@
     }
 
     .header {
-      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      height: 100px;
       width: 100%;
       border-radius: 1rem;
       background-color: #5b5b5b;
@@ -58,22 +60,29 @@
       border-radius: 5rem;
       scale: 50%;
     }
+
+    .content {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
   <script>
-    function showContent() {
-      if(document.getElementById("content").hidden) {
-        document.getElementById("content").removeAttribute("hidden");
-      } else {
-        document.getElementById("content").setAttribute("hidden", "");
-      }
-    }
+    const contents = ["about", "hobby", "work"]
 
-    function toggleMenu() {
-      if(document.getElementById("menu").hidden) {
-        document.getElementById("menu").removeAttribute("hidden");
+    function show(element) {
+      if (!document.getElementById(element).hidden) {
+        return
+      }
+
+      contents.forEach(content => {
+        document.getElementById(content).setAttribute("hidden", "");
+      });
+
+      if(document.getElementById(element).hidden) {
+        document.getElementById(element).removeAttribute("hidden");
       } else {
-        document.getElementById("menu").setAttribute("hidden", "");
+        document.getElementById(element).setAttribute("hidden", "");
       }
     }
   </script>
