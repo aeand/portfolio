@@ -22,27 +22,29 @@
       <h2 onclick="show('work')" style="text-decoration: underline; color: #067df5">Work Experience</h2>
     </header>
 
-    <content id="about" hidden>
-      <h1>About page</h1>
+    <div id="empty" class="content"></div>
+
+    <div id="about" class="content" hidden>
+      <h1 style="margin-top: 0rem;">About page</h1>
       <p>Hello! It's a me Mario!</p>
-    </content>
+    </div>
 
-    <content id="hobby" hidden>
-      <h1>Hobby page</h1>
+    <div id="hobby" class="content" hidden>
+      <h1 style="margin-top: 0rem;">Hobby page</h1>
       <p>This is what I do</p>
-    </content>
+    </div>
 
-    <content id="work" hidden>
-      <h1>Work experience page</h1>
+    <div id="work" class="content" hidden>
+      <h1 style="margin-top: 0rem;">Work experience page</h1>
       <p>I worked before.. I swear!</p>
-    </content>
+    </div>
   </body>
 
   <style>
     .background {
       background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wallpaperflare.com%2Fstatic%2F810%2F29%2F167%2Fsea-sunset-beach-night-wallpaper.jpg&f=1&nofb=1&ipt=1ecda3a9563f6f99db681a8b2f4bcc34961c1cd4426c24e81eda7ff8aa99458c&ipo=images');
       background-size: auto;
-      margin: 1rem;
+      margin: 3rem;
     }
 
     .header {
@@ -52,23 +54,26 @@
 
       height: 100px;
       width: 100%;
-      border-radius: 1rem;
+      border-radius: 1rem 1rem  0rem 0rem;
       background-color: #5b5b5b;
     }
 
-    .picture {
-      border-radius: 5rem;
-      scale: 50%;
-    }
-
     .content {
+      [hidden] {
+        display: none;
+      };
       width: 100%;
       height: 100%;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0rem 0rem 1rem 1rem;
+
+      text-align: center;
     }
   </style>
 
   <script>
-    const contents = ["about", "hobby", "work"]
+    const contents = ["empty", "about", "hobby", "work"]
 
     function show(element) {
       if (!document.getElementById(element).hidden) {
