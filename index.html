@@ -1,5 +1,4 @@
 <!-- TODO
- - make css variables so I can reuse e.g. text-color in multiple places
  - make the page mobile friendly (maybe a "switch to mobile button?")
  - add some red to these gray and boring pages
  - check figma for idea for content
@@ -59,14 +58,18 @@
   </body>
 
   <style>
-    .background-clr {
-      background-color: #5e1d1d;
+    :root {
+      --background: #303030;
+      --content: #707070;
+      --primary: #811212;
+      --secondary: #5e1d1d;
+      --tertiary: #8a4141;
     }
 
     .background {
       display: flex;
       flex-direction: column;
-      background-color: #303030;
+      background-color: var(--background);
       background-size: auto;
       margin: 3rem;
     }
@@ -80,11 +83,11 @@
       height: 100px;
       width: 100%;
       border-radius: 1rem 1rem  0rem 0rem;
-      background-color: #5e1d1d;
+      background-color: var(--primary);
     }
 
     .content {
-      background-color: rgb(100, 100, 100);
+      background-color: var(--content);
       padding: 1rem;
       border-radius: 0rem 0rem 1rem 1rem;
 
