@@ -1,5 +1,5 @@
 <!-- TODO
- - make the page mobile friendly (maybe a "switch to mobile button?")
+ - make the page mobile friendly
  - check figma for idea for content
  - switch out content text via JS or via mutliple HTML files so I can change the layout on one place and change all content pages
  - add a back to top button
@@ -19,18 +19,18 @@
       class="header"
     >
       <h2
-        onclick="showContent('about')"
-        style="text-decoration: underline; color: #ffffff">
+        class="header-link"
+        onclick="showContent('about')">
           About me
       </h2>
       <h2
-        onclick="showContent('hobby')"
-        style="text-decoration: underline; color: #ffffff">
+        class="header-link"
+        onclick="showContent('hobby')">
           Hobbies
       </h2>
       <h2
-        onclick="showContent('work')"
-        style="text-decoration: underline; color: #ffffff">
+        class="header-link"
+        onclick="showContent('work')">
           Work Experience
       </h2>
     </header>
@@ -97,9 +97,14 @@
       justify-content: space-evenly;
 
       height: 100px;
-      width: 100%;
       border-radius: 1rem 1rem  0rem 0rem;
       background-color: var(--primary);
+    }
+
+    .header-link {
+      padding: 0rem 1rem;
+      color: #ffffff;
+      text-decoration: underline;
     }
 
     .content {
