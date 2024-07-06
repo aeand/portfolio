@@ -1,8 +1,7 @@
 <!-- TODO
  - make the page mobile friendly (maybe a "switch to mobile button?")
- - add some red to these gray and boring pages
  - check figma for idea for content
- - switch out content via JS or via mutliple HTML files so I can change the layout on one place and change all content pages
+ - switch out content text via JS or via mutliple HTML files so I can change the layout on one place and change all content pages
  - add a back to top button
  - maybe add a dark/light mode?
 -->
@@ -37,33 +36,50 @@
     </header>
 
     <content id="home" class="content">
-      <h1 style="margin-top: 0rem;">Home page</h1>
-      <p>Welcome!!</p>
+      <h1 class="text">
+        Home page
+      </h1>
+      <p class="text">
+        Welcome!!
+      </p>
     </content>
 
     <content id="about" class="content" hidden>
-      <h1 style="margin-top: 0rem;">About page</h1>
-      <p>Hello! It's a me Mario!</p>
+      <h1 class="text">
+        About page
+      </h1>
+      <p class="text">
+        Hello! It's a me Mario!
+      </p>
     </content>
 
     <content id="hobby" class="content" hidden>
-      <h1 style="margin-top: 0rem;">Hobby page</h1>
-      <p>This is what I do</p>
+      <h1 class="text">
+        Hobby page
+      </h1>
+      <p class="text">
+        This is what I do
+      </p>
     </content>
 
     <content id="work" class="content" hidden>
-      <h1 style="margin-top: 0rem;">Work experience page</h1>
-      <p>I worked before.. I swear!</p>
+      <h1 class="text">
+        Work experience page
+      </h1>
+      <p class="text">
+        I worked before.. I swear!
+      </p>
     </content>
   </body>
 
   <style>
     :root {
       --background: #303030;
-      --content: #707070;
+      --content: #311818;
       --primary: #811212;
       --secondary: #5e1d1d;
       --tertiary: #8a4141;
+      --text: #ffffff;
     }
 
     .background {
@@ -92,6 +108,11 @@
       border-radius: 0rem 0rem 1rem 1rem;
 
       text-align: center;
+    }
+
+    .text {
+      color: var(--text);
+      margin-top: 0rem;
     }
   </style>
 
